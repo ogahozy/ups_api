@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}ejus global{% endblock %}
+
+{% block head %}
+{{super()}} 
+
+<style type="text/css">
+body{ background-color:lightViolet;}
+h1,h2,h3,h4,h5,p{text-align:justify; color:Black; font-family: "Times New Roman",Times,serif;}
+        a {
+            font-weight: bold;
+            color: #ff982c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;}
+  </style>
+
+{% endblock %} 
+
+{% block app_content %}
+  <h1><b>Hi, welcome to our world!</h1></b>
+
+  <form  method="POST" action="{{url_for('main.results')}}">
+           {{ form.csrf_token }}
+           {{ form.hidden_tag()}}   
+           {{wtf.quick_form(form) }}      
+  </form>
+  
+<h2>KINDLY GO THROUGH OUR TRACKING GUIDES/RULES</h2>
+<h4>
+<P>Ensure tracking requests are valid. If your request returns an error message such as "tracking number not found",
+  "no information available", or "invalid tracking number", you should research the cause of the error before
+  continuing to track the same number. </P>
+<P>When the results of a tracking request indicate a “delivered” status, do not continue to track the package</P>
+<P>Track packages during “off hours” whenever possible. Off hours are from 5:00 pm to 8:00 am East Coast time</P>
+<P>Avoid automatic access between 10:00 am to 3:00 pm EST. However, you may track critical packages during this
+  time.</P>
+<P>Refrain from tracking the same numbers continually throughout the day. Unique tracking numbers should be
+  tracked no more than once per hour or a maximum of 24 times in a single day.</P></h4>
+  <h3>**Adhering to these rules will make us save you better**</h3>
+
+   
+{% endblock %}
+
+        

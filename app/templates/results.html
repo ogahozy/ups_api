@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}ejusglobal{% endblock %}
+
+
+{% block head %}
+{{super()}} 
+
+<style type="text/css">
+body{ background-color:lightViolet;}
+h1,h2,h3,h4,h5,p{text-align:justify; color:Black; font-family: "Times New Roman",Times,serif;}
+        a {
+            font-weight: bold;
+            color: #ff982c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;}
+  </style>
+
+{% endblock %} 
+
+{% block app_content %}
+
+<div class="container">
+ 
+  <h3>
+  <div> <p>Transcript Status::{{desc[0]}}</p></div>
+  <br>
+   <div><p>City:: {{city[0]}}</p></div>
+   <br>
+   <p>Tracking No:: {{track_no[0]}}</p>
+   <br>
+   <p> Country:: {{country[0]}}</p> 
+   <br>
+   <p> Time:: {{time}}</p>
+   <br>
+   <p> Date:: {{date}}</p>     
+ </h3>  
+
+</div>
+
+ <a href="{{ url_for('main.index') }}">Back to Home</a>
+
+{% endblock %}
