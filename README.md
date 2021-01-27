@@ -4,4 +4,8 @@ USAGE
 2. change directory the folder
 3. pip install -r requirements,txt
 4. export FLASK_APP=run.py
+5. Also exportmyour access credentials to environs
+ie: export AccessLicenseNumber='your license'
+i.Do same for username and password 
+6. flask run
 
