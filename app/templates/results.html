@@ -1,45 +1,43 @@
 {% extends 'base.html' %}
 
-{% block title %}ejusglobal{% endblock %}
 
 
-{% block head %}
-{{super()}} 
-
-<style type="text/css">
-body{ background-color:lightViolet;}
-h1,h2,h3,h4,h5,p{text-align:justify; color:Black; font-family: "Times New Roman",Times,serif;}
-        a {
-            font-weight: bold;
-            color: #ff982c;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;}
-  </style>
-
-{% endblock %} 
 
 {% block app_content %}
 
-<div class="container">
- 
-  <h3>
-  <div> <p>Transcript Status::{{desc[0]}}</p></div>
-  <br>
-   <div><p>City:: {{city[0]}}</p></div>
-   <br>
-   <p>Tracking No:: {{track_no[0]}}</p>
-   <br>
-   <p> Country:: {{country[0]}}</p> 
-   <br>
-   <p> Time:: {{time}}</p>
-   <br>
-   <p> Date:: {{date}}</p>     
- </h3>  
+<br>
+<h4> Results of the current status of your transcript</h4>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <!-- Your Columns HERE -->
+            <th scope="col">Transcript Status</th>
+            <th scope="col">City</th>
+            <th scope="col">Tracking No</th>
+            <th scope="col">Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Your rows inside the table HERE: -->
+            <tr>
+                <td>{{desc[0]}}</td>
+                <td>{{city[0]}}</td>
+                <td>{{track_no[0]}}</td>
+                <td>{{country[0]}}</td>
+            </tr>
+    </tbody>
+</table>
 
+<div class="container">
+    <div class="row justify-content-center">
+       <div class = "col-9">
+         <p> The date  of present status is {{date}} and the time is {{time}}</p>
+   
+       </div>
+    </div>
 </div>
+
 
  <a href="{{ url_for('main.index') }}">Back to Home</a>
 
-{% endblock %}
+{% endblock %
