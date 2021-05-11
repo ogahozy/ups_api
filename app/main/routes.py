@@ -26,8 +26,8 @@ def results():
 
     if request.method=='POST':   
         num = request.form['num']
-        url = "https://onlinetools.ups.com/track/v1/details/{}".format(num)
-        #url = "https://wwwcie.ups.com/track/v1/details/{}".format(num)
+        #url = "https://onlinetools.ups.com/track/v1/details/{}".format(num)
+        url = "https://wwwcie.ups.com/track/v1/details/{}".format(num)
         r = re.get(url,headers=headers)
         data = json.loads(r.text)
         if 'trackResponse' not in data:
