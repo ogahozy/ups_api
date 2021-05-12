@@ -1,6 +1,6 @@
 # import all the needed packages
 import os
-from flask import Flask, render_template,request, render_template,url_for,current_app
+from flask import Flask, render_template,request,url_for,current_app
 import requests as re
 import json
 from . import main
@@ -26,8 +26,8 @@ def results():
 
     if request.method=='POST':   
         num = request.form['num']
-        #url = "https://onlinetools.ups.com/track/v1/details/{}".format(num)
-        url = "https://wwwcie.ups.com/track/v1/details/{}".format(num)
+        url = "https://onlinetools.ups.com/track/v1/details/{}".format(num)
+        #url = "https://wwwcie.ups.com/track/v1/details/{}".format(num)
         r = re.get(url,headers=headers)
         data = json.loads(r.text)
         if 'trackResponse' not in data:
