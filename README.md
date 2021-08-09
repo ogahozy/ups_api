@@ -10,3 +10,4 @@ i.Do same for username and password
 6. flask run
 There you go
 
+if you like the work kindly buy us a coffee :https://ko-fi.com/ogahcy
