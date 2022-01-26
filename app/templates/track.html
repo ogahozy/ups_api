@@ -1,39 +1,55 @@
-{% extends 'base.html' %}
-{% import 'bootstrap/wtf.html' as wtf %}
+{% extends "base.html" %} {% block content %}
 
-{% block app_content %}
-  <h1><b>welcome to Ebonyi State University e-Services</h1></b>
-
-  <form  method="POST" action="{{url_for('main.results')}}">
-           {{ form.csrf_token }}
-           {{ form.hidden_tag()}}   
-           {{wtf.quick_form(form) }}      
-  </form>
-  <br>
-
-<div class="container">
-    <div class="row justify-content-center">
-      <h3>KINDLY GO THROUGH OUR TRACKING GUIDES/RULES</h3>
-       <div class = "col-9">
-
-<h4>
-<P>Ensure tracking requests are valid. If your request returns an error message such as "tracking number not found",
-  "no information available", or "invalid tracking number", you should research the cause of the error before
-  continuing to track the same number. </P>
-
-<P>When the results of a tracking request indicate a “delivered” status, do not continue to track the package</P>
-<P>Track packages during “off hours” whenever possible. Off hours are from 5:00 pm to 8:00 am East Coast time</P>
-<P>Avoid automatic access between 10:00 am to 3:00 pm EST. However, you may track critical packages during this
-  time.</P>
-<P>Refrain from tracking the same numbers continually throughout the day. Unique tracking numbers should be
-  tracked no more than once per hour or a maximum of 24 times in a single day.</P></h4>
-  <h3>**Adhering to these rules will make us save you better**</h3>
-   </div>
+    <h1 class="underline font-bold">Welcome to Ebonyi State University e-Services</h1>
+  
+    <br>
+    <div>
+      <p>Enter your tracking number</p>
+      <form action="/results" method="post" class="inline-flex">
+        <input
+         class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+         placeholder="Your tracking number"
+         type="text"
+         name="name"
+        />
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button
+         class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal bg-green-300" type="submit">
+         Submit
+        </button>
+      </form>
     </div>
+<br>
+<div>
+      <div class="underline font-serif italic font-200">
+        <h3>KINDLY GO THROUGH OUR TRACKING GUIDES/RULES</h3>
+      </div>
+
+  <h4 class="bg-indigo-200 font-serif">
+    
+      <P>Ensure tracking requests are valid. If your request returns an error message such as <strong>"tracking number not found"</strong>,
+      <strong>no information available"</strong>", or <strong>"invalid tracking number"</strong>, you should research the cause of the error before
+      continuing to track the same number. </P>
+    
+    
+      <br>
+      
+    <P>When the results of a tracking request indicate a “delivered” status, do not continue to track the package.</P>
+    
+    <br>
+    <P>Track packages during “off hours” whenever possible. Off hours are from 5:00 pm to 8:00 am East Coast time.</P>
+    <br>
+    <P>Avoid automatic access between 10:00 am to 3:00 pm EST. However, you may track critical packages during this
+    time.</P>
+    <br>
+    <P>Refrain from tracking the same numbers continually throughout the day. Unique tracking numbers should be
+    tracked no more than once per hour or a maximum of 24 times in a single day.</P>
+  </h4>
+<br>
+  <h3 class="uppercase italic bg-indigo-400 text-green-300 font-extrabold font-serif">Adhering to these rules will make us save you better</h3>
+   
 
 </div>
    
-{% endblock %}
 
-
-        
+{% endblock content %}

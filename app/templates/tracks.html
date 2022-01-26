@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+  <h1><b>welcome to Ebonyi State University e-Services</h1></b>
+
+  <form  method="POST" action="{{url_for('main.results')}}">
+           {{ form.csrf_token }}
+           {{ form.hidden_tag()}}   
+           {{wtf.quick_form(form) }}      
+  </form>
+  <br>
+
+<div class="container">
+    <div class="row justify-content-center">
+      <h3>KINDLY GO THROUGH OUR TRACKING GUIDES/RULES</h3>
+       <div class = "col-9">
+
+<h4>
+<P>Ensure tracking requests are valid. If your request returns an error message such as "tracking number not found",
+  "no information available", or "invalid tracking number", you should research the cause of the error before
+  continuing to track the same number. </P>
+
+<P>When the results of a tracking request indicate a “delivered” status, do not continue to track the package</P>
+<P>Track packages during “off hours” whenever possible. Off hours are from 5:00 pm to 8:00 am East Coast time</P>
+<P>Avoid automatic access between 10:00 am to 3:00 pm EST. However, you may track critical packages during this
+  time.</P>
+<P>Refrain from tracking the same numbers continually throughout the day. Unique tracking numbers should be
+  tracked no more than once per hour or a maximum of 24 times in a single day.</P></h4>
+  <h3>**Adhering to these rules will make us save you better**</h3>
+   </div>
+    </div>
+
+</div>
+   
+{% endblock %}
+
+
+        
