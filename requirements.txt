@@ -5,13 +5,16 @@ click==7.1.2
 dominate==2.6.0
 Flask==1.1.2
 Flask-Bootstrap==3.3.7.1
+Flask-Login==0.5.0
 Flask-Moment==0.11.0
+Flask-SQLAlchemy==2.5.1
 Flask-WTF==0.14.3
+greenlet==1.1.2
 gunicorn==20.0.4
 idna==2.10
 isort==5.7.0
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 mccabe==0.6.1
@@ -19,6 +22,7 @@ pylint==2.6.0
 python-dotenv==0.15.0
 requests==2.25.1
 six==1.15.0
+SQLAlchemy==1.4.29
 toml==0.10.2
 urllib3==1.26.2
 visitor==0.1.3
