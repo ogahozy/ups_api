@@ -1,7 +1,7 @@
-from flask import Flask, current_app
+from flask import  current_app, url_for
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_sqlalchemy import SQLAlchemy  # add
+#from flask_sqlalchemy import SQLAlchemy  # add
 from datetime import datetime  # add
 from app import db,login
 
