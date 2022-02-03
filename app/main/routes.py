@@ -6,7 +6,7 @@ import json
 from io import TextIOWrapper
 import csv
 from . import main
-from app.model import User, Task
+from app.model import Users, Task
 from app import db
 from flask_login import login_required,current_user,login_user,logout_user
 from app.extract import json_extract
@@ -26,7 +26,7 @@ def login():
     
     if request.method == 'POST':
         username = request.form['username']
-        user = User.query.filter_by(username=username).first()
+        user = Users.query.filter_by(username=username).first()
         if user is not None and user.check_password(request.form['passwd']):
             login_user(user)
             return redirect(url_for('main.upload'))
