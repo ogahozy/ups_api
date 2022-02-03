@@ -8,7 +8,7 @@ from app import db,login #,bcrypt
 
 
 class Users(UserMixin, db.Model):
-    __tablename__= 'user'
+    __tablename__= 'users'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False)
     password_hash = db.Column(db.String(255))
@@ -24,7 +24,7 @@ class Users(UserMixin, db.Model):
 
 
     def __repr__(self):
-        return f'user: {self.username}'
+        return f'users: {self.username}'
 
 @login.user_loader
 def load_user(id):
