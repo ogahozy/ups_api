@@ -1,23 +1,26 @@
 from flask import  current_app, url_for
 from flask_login import UserMixin
+#from flask_bcrypt import generate_password_hash, check_password_hash
 from werkzeug.security import generate_password_hash, check_password_hash
 #from flask_sqlalchemy import SQLAlchemy  # add
 from datetime import datetime  # add
-from app import db,login
+from app import db,login #,bcrypt
 
 
 class User(UserMixin, db.Model):
     __tablename__= 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), nullable=False)
-    password_hash = db.Column(db.String())
+    password_hash = db.Column(db.String(255))
 
 
     def set_password(self,password):
         self.password_hash = generate_password_hash(password)
     
     def check_password(self,password):
-        return check_password_hash(self.password_hash,password)
+        #enc_pw = password.encode('utf-8')
+        return check_password_hash(self.password_hash, password)
+        #return bcrypt.check_password_hash(enc_pw, bytes(self.password_hash,'utf-8'))
 
 
     def __repr__(self):

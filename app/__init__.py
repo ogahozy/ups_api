@@ -5,10 +5,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_bcrypt import Bcrypt
 # ,login_required,login_user,logout_user
 from config import Config
 
 #bootstrap = Bootstrap()
+bcrypt = Bcrypt()
 db = SQLAlchemy()  #
 migrate = Migrate()
 login = LoginManager()
@@ -21,6 +23,7 @@ def create_app(config_class=Config):
 
     #bootstrap.init_app(app)
     db.init_app(app)
+    bcrypt.init_app(app)
     login.init_app(app)
     csrf.init_app(app)
     migrate.init_app(app, db)
