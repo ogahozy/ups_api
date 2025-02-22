@@ -4,8 +4,8 @@ import requests
 import time
 
 # UPS OAuth 2.0 credentials
-client_id = '5p6is4iJrn7Z9HATpEPAGBjSkQubH9rb4IVjfVIMrX1Qf6qI'
-client_secret ='4koSWw82tj7SLGr5T8PMgRrQbha6bRn3lh2pqI3KGQSJ6LByQhJzJT3NhnAQ4qFK'
+client_id = '5p6is4iJrn7Z9HATpEPAGBjSkQu4IVjfVIMrX1Qf6qI'
+client_secret ='4koSWw82tj7SLGr5T8PM3lh2pqI3KGQSJ6LByQhJzJT3NhnAQ4qFK'
 #client_id = os.environ.get('client_id')
 #client_secret = os.environ.get('client_secret')
 
