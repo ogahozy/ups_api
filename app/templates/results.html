@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 
-
-
-
 {% block app_content %}
 
 <br>
@@ -10,7 +7,7 @@
 <table class="table table-hover table-dark">
     <thead>
         <tr>
-            <!-- Your Columns HERE -->
+             <!--Your Columns HERE--> 
             <th scope="col">Transcript Status</th>
             <th scope="col">City</th>
             <th scope="col">Tracking No</th>
@@ -31,7 +28,14 @@
 <div class="container">
     <div class="row justify-content-center">
        <div class = "col-9">
-         <p> The date  of present status is {{date}} and the time is {{time}}</p>
+        {% if received %}
+        <p><strong>Your parcel was received by:</strong> {{received}}</p>
+        {% endif %}
+
+        
+        <p>The date  of present status is: <strong>{{ date }}, Time:{{time}}</strong></p>
+            
+         
    
        </div>
     </div>

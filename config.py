@@ -6,6 +6,6 @@ load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'  
-    AccessLicenseNumber = os.environ.get('AccessLicenseNumber')
-    Username = os.environ.get('Username')
-    Password = os.environ.get('Password')
+    client_id = os.environ.get('client_id')
+    client_secret = os.environ.get('client_secret')
+    #x_merchant_id = os.environ.get('x-merchant-id')
