@@ -41,5 +41,5 @@ def get_ups_access_token():
 
         return ups_token["access_token"]
     else:
-        print("Failed to fetch UPS token:", response.text)
+        print("Failed to fetch access token:", response.text)
         return None
