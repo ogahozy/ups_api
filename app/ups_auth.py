@@ -4,10 +4,10 @@ import requests
 import time
 
 # UPS OAuth 2.0 credentials
-client_id = '5p6is4iJrn7Z9HATpEPAGBjSkQu4IVjfVIMrX1Qf6qI'
-client_secret ='4koSWw82tj7SLGr5T8PM3lh2pqI3KGQSJ6LByQhJzJT3NhnAQ4qFK'
-#client_id = os.environ.get('client_id')
-#client_secret = os.environ.get('client_secret')
+#client_id = '5p6is4iJrn7Z9HATpEPAGBjSkQu4IVjfVIMrX1Qf6qI'
+#client_secret ='4koSWw82tj7SLGr5T8PM3lh2pqI3KGQSJ6LByQhJzJT3NhnAQ4qFK'
+client_id = os.environ.get('client_id')
+client_secret = os.environ.get('client_secret')
 
 # UPS OAuth 2.0 token endpoint
 TOKEN_URL = 'https://onlinetools.ups.com/security/v1/oauth/token'
